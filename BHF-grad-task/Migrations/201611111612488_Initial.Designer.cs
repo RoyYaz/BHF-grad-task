@@ -13,7 +13,7 @@ namespace BHF_grad_task.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201611111544349_Initial"; }
+            get { return "201611111612488_Initial"; }
         }
         
         string IMigrationMetadata.Source

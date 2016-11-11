@@ -7,7 +7,7 @@ namespace BHF_grad_task.Migrations
     using System.Data.Entity.Validation;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<BHF_grad_task.DataAccessLayer.BHFContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DataAccessLayer.BHFContext>
     {
         public Configuration()
         {
@@ -19,44 +19,48 @@ namespace BHF_grad_task.Migrations
             context.donateDB.AddOrUpdate(i => i.DonationID,
                 new Donation
                 {
+                    DonationID = 1,
                     Money = 10.00M,
-                    DonationDate = new DateTime(2016, 11, 12, 12, 33, 41),
-                    Regularity = "None"
+                    DonationDate = DateTime.Now,
+                    Regularity = "One-off"
                 },
 
                 new Donation
                 {
+                    DonationID = 2,
                     Money = 10.00M,
-                    DonationDate = new DateTime(2016, 11, 16, 15, 43, 46),
-                    Regularity = "None"
+                    DonationDate = DateTime.Now,
+                    Regularity = "One-off"
                 }
                 );
 
-                context.userDB.AddOrUpdate(i => i.UserID,
-                    new User
-                    {
-                        Title = "Mr",
-                        Forename = "Tim",
-                        Surname = "Marsh",
-                        Email = "tim@hotmail.com",
-                        NoAddress = "180",
-                        Address = "Hampstead Rd",
-                        PostCode = "NW1 7AW",
-                        Telephone = "02085320140"
-                    },
+            context.userDB.AddOrUpdate(i => i.UserID,
+                new User
+                {
+                    UserID = 1,
+                    Title = "Mr",
+                    Forename = "Tim",
+                    Surname = "Marsh",
+                    Email = "tim@hotmail.com",
+                    NoAddress = "180",
+                    Address = "Hampstead Rd",
+                    PostCode = "NW1 7AW",
+                    Telephone = "02085320140"
+                },
 
-                    new User
-                    {
-                        Title = "Mr",
-                        Forename = "Roy",
-                        Surname = "Yazbeck",
-                        Email = "roy@hotmail.com",
-                        NoAddress = "180",
-                        Address = "Hampstead Rd",
-                        PostCode = "NW1 7AW",
-                        Telephone = "02079350185"
-                    }
-                    );
+                new User
+                {
+                    UserID = 2,
+                    Title = "Mr",
+                    Forename = "Roy",
+                    Surname = "Yazbeck",
+                    Email = "roy@hotmail.com",
+                    NoAddress = "180",
+                    Address = "Hampstead Rd",
+                    PostCode = "NW1 7AW",
+                    Telephone = "02079350185"
+                }
+                );
         }
     }
 }

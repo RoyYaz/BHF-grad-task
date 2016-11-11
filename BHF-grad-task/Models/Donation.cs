@@ -18,7 +18,7 @@ namespace BHF_grad_task.Models
 
         [Display(Name = "Donation Date")]
         [DataType(DataType.DateTime)]
-        //[DisplayFormat(DataFormatString = "{0:dd-MM-yyyy H:mm:ss}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm:ss}", ApplyFormatInEditMode = true)]
         public DateTime DonationDate { get; set; }
 
         public string Regularity { get; set; }

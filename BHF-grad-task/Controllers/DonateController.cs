@@ -47,10 +47,11 @@ namespace BHF_grad_task.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "DonationID")] Donation donation)
+        public ActionResult Create([Bind(Include = "DonationID,Money,DonationDate,Regularity")] Donation donation)
         {
             if (ModelState.IsValid)
             {
+                donation.DonationDate = DateTime.Now;
                 db.donateDB.Add(donation);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -79,10 +80,11 @@ namespace BHF_grad_task.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "DonationID")] Donation donation)
+        public ActionResult Edit([Bind(Include = "DonationID,Money,DonationDate,Regularity")] Donation donation)
         {
             if (ModelState.IsValid)
             {
+                donation.DonationDate = DateTime.Now;
                 db.Entry(donation).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
