@@ -3,43 +3,76 @@
 @{
     ViewBag.Title = "Index";
 }
+<head>
+    <title>@ViewBag.Title - Donate to BHF</title>
+</head>
 
-<h2>Index</h2>
+<body>
+    <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Money)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DonationDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Regularity)
-        </th>
-        <th></th>
-    </tr>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Money)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DonationDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Regularity)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.DonationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.DonationID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.DonationID })
-        </td>
-    </tr>
-}
+    <div id="wrapper">
+        <label class="radioImage">
+            @*~/Views/Donate/*@
+            <img src="http://localhost/~/Views/Donate//researcher-toolkit_316x205.jpg" alt="Test tubes" />
+            <span>
+                @Html.RadioButton("radioOneOff", 10.00M) £10
+            </span>
+        </label>
+        <label class="radioImage">
+            <img src="http://localhost/~/Views/Donate//researcher-toolkit_316x205.jpg" alt="Test tubes" />
+            <span>
+                @Html.RadioButton("radioOneOff", 25.00M)
+                £25
+            </span>
+        </label>
+        <label class="radioImage">
+            <img src="http://localhost/~/Views/Donate//researcher-toolkit_316x205.jpg" alt="Test tubes" />
+            <span>
+                @Html.RadioButton("radioOneOff", 50.00M)
+                £50
+            </span>
+        </label>
+    </div>
 
-</table>
+    <div>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Money)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DonationDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Regularity)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Money)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DonationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Regularity)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.DonationID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.DonationID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.DonationID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
