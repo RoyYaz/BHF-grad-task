@@ -30,8 +30,8 @@ C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Micro
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Microsoft.Owin.Security.dll
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Owin.dll
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
-C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\EntityFramework.dll
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\EntityFramework.dll
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\BHF-grad-task.pdb
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Newtonsoft.Json.xml
@@ -47,8 +47,8 @@ C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Micro
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Microsoft.Owin.Security.xml
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
-C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\EntityFramework.xml
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\EntityFramework.xml
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\obj\Debug\BHF-grad-task.Tests.csprojResolveAssemblyReference.cache
 C:\Users\yazbeckr\Source\Repos\BHF-grad-task\BHF-grad-task.Tests\obj\Debug\BHF-grad-task.Tests.dll

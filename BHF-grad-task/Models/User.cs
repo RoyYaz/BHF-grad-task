@@ -1,47 +1,54 @@
 ﻿using System;
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BHF_grad_task.Models
 {
     public class User
     {
-        protected string title { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int UserID { get; set; }
+
+        public string Title { get; set; }
 
         [Required]
         [StringLength(35)]
-        protected string forename { get; set; }
+        public string Forename { get; set; }
 
         [Required]
         [StringLength(35)]
-        protected string surname { get; set; }
+        public string Surname { get; set; }
 
         [EmailAddress]
         [Required]
         [DataType(DataType.EmailAddress)]
         [StringLength(255)]
-        protected string email { get; set; }
+        public string Email { get; set; }
 
         [RegularExpression(@"^[a-zA-Z0-9]+$")]
         [Required]
         [StringLength(35)]
-        protected string noAddress { get; set; }
+        public string NoAddress { get; set; }
 
-        [RegularExpression(@"^[a-zA-Z]+$")]
+        [RegularExpression(@"^[a-zA-Z\s]*$")]
         [Required]
         [StringLength(35)]
-        protected string address { get; set; }
+        public string Address { get; set; }
 
         [Required]
         [StringLength(8, MinimumLength =6)]
-        protected string postCode { get; set; }
+        public string PostCode { get; set; }
 
-        [MaxLength(12)]
-        protected int telephone { get; set; }
+        [RegularExpression(@"^(((\+44\s?\d{4}|\(?0\d{4}\)?)\s?\d{3}\s?\d{3})|((\+44\s?\d{3}|\(?0\d{3}\)?)\s?\d{3}\s?\d{4})|((\+44\s?\d{2}|\(?0\d{2}\)?)\s?\d{4}\s?\d{4}))(\s?\#(\d{4}|\d{3}))?$")]
+        [DataType(DataType.PhoneNumber)]
+        public string Telephone { get; set; }
 
-        public class UserDBContext : DbContext
-        {
-            public DbSet<User> UserDB { get; set; }
-        }
+        
     }
+
+    //public class UserDBContext : DbContext
+    //{
+    //    public DbSet<User> UserDB { get; set; }
+    //}
 }
