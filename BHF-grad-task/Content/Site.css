@@ -9,6 +9,10 @@
     padding-right: 15px;
 }
 
+table {
+    margin-top:20em;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -21,4 +25,22 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+.radioImage {
+    position: relative;
+    
+}
+
+.radioImage img{
+    width: 300px;
+    height: 200px;
+    padding-top: 1em;
+    
+}
+
+.radioImage span {
+    position: absolute;
+    /*margin-top: 1em;*/
+    padding-left: 1em;
 }
