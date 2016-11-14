@@ -1,4 +1,8 @@
-﻿body {
+﻿* {
+  
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -27,11 +31,46 @@ textarea {
     max-width: 280px;
 }
 
+#wrapper, #wrapper2 {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    
+}
+
 .radioImage {
-    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    position: relative;    
+    max-width: 350px;
+    /*max-height: 200px;*/
+}
+
+.radioImage img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    /*display: block;*/
+    margin-bottom: 0.5em;
+    padding-top: 1.5em;
+
+}
+
+.radioImage span, h3 {
+    background-color: red;
+    color: white;
 }
 
 .radioImage span {
+    border: 1px solid rgba(0, 0, 0, 0.3);
     position: absolute;
-    margin-top: 1em;
+    font-size: large;
+    /*margin-top: 1em;*/
+}
+
+h3 {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    display: compact;
+    width: 200px;
+    /*background-color: red;
+    color: white;*/
+    padding: 5px;
 }

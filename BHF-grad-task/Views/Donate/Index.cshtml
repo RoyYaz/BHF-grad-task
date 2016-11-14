@@ -8,35 +8,62 @@
 </head>
 
 <body>
-    <h2>Index</h2>
-
+    <h2>Make a donation</h2>
     <p>
-        @Html.ActionLink("Create New", "Create")
+        Make a donation mothertrucker. Have some fries with that kindness motherfluffer.
     </p>
 
+    @*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
     <div id="wrapper">
+        <h3>Regular donation</h3>
         <label class="radioImage">
             @*~/Views/Donate/*@
-            <img src="http://localhost/~/Views/Donate//researcher-toolkit_316x205.jpg" alt="Test tubes" />
+            <img src="https://tanyagrove.files.wordpress.com/2011/05/test-tubes.jpg" alt="Test tubes" />
             <span>
-                @Html.RadioButton("radioOneOff", 10.00M) £10
+                @Html.RadioButton("regularDonation", 10.00M) £10 could pay for a toolkit for heart attack researchers use in a day
             </span>
         </label>
         <label class="radioImage">
-            <img src="http://localhost/~/Views/Donate//researcher-toolkit_316x205.jpg" alt="Test tubes" />
+            <img src="http://www.alzheimersresearchuk.org/wp-content/uploads/2015/02/researcher-leader-image3.jpg" alt="Researcher">
             <span>
-                @Html.RadioButton("radioOneOff", 25.00M)
-                £25
+                @Html.RadioButton("regularDonation", 25.00M) £25 could pay for one hour of research by our early career scientists
             </span>
         </label>
         <label class="radioImage">
-            <img src="http://localhost/~/Views/Donate//researcher-toolkit_316x205.jpg" alt="Test tubes" />
+            <img src="http://www.research-in-germany.org/mediaObject/en/Jobs-and-Career/female-researcher-inspecting-tube/original/female+researcher+inspecting+tube.jpg" alt="phd researcher" />
             <span>
-                @Html.RadioButton("radioOneOff", 50.00M)
-                £50
+                @Html.RadioButton("regularDonation", 50.00M) £50 could support a PhD student starting their career in research
             </span>
         </label>
+
     </div>
+
+    <div id="wrapper2">
+    <h3>One-off donation</h3>
+    <label class="radioImage">
+        @*~/Views/Donate/*@
+        <img style="height: 253px;" src="https://www.bhf.org.uk/-/media/images/heart-health/risk-factors/sub-landing-tiles/heart-helpline.jpg?h=205&w=638&la=en" alt="Nurse talking on heart helpline" />
+        <span>
+            @Html.RadioButton("radioOneOff", 20.00M) £20 could provide an hour of vital support from a Helpline Cardiac Nurse
+        </span>
+    </label>         
+    <label class="radioImage">
+        @*&#64; is the encoded version of @*@
+        <img style="height: 253px;" src="http://cpr.heart.org/idc/groups/heart-public/&#64;wcm/&#64;ecc/documents/image/~extract/UCM_476785~1~staticrendition/large.jpg" alt="CPR training session">
+        <span>
+            @Html.RadioButton("radioOneOff", 50.00M) £50 could help fund a training kit which allows more people to learn CPR
+        </span>
+    </label>
+    <label class="radioImage">
+        <img style="height: 253px;" src="http://www.gla.ac.uk/media/media_334681_en.jpg" alt="nhf researcher" />
+        <span>
+            @Html.RadioButton("radioOneOff", 85.00M) £85 could help train one of our PhD students for one day
+        </span>
+    </label>
+</div>
 
     <div>
         <table class="table">
