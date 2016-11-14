@@ -21,6 +21,12 @@ namespace BHF_grad_task.Controllers
             return View(db.donateDB.ToList());
         }
 
+        // GET: Donate/DonateForm
+        public ActionResult DonateForm()
+        {
+            return View();
+        }
+
         // GET: Donate/Details/5
         public ActionResult Details(int? id)
         {

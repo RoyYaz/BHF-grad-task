@@ -250,6 +250,7 @@
     <Content Include="Views\Donate\Details.cshtml" />
     <Content Include="Views\Donate\Edit.cshtml" />
     <Content Include="Views\Donate\Index.cshtml" />
+    <Content Include="Views\Donate\DonateForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

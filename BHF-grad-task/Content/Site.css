@@ -32,14 +32,15 @@ textarea {
 }
 
 #wrapper, #wrapper2 {
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    /*border: 1px solid rgba(0, 0, 0, 0.3);*/
     
 }
 
 .radioImage {
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    /*border: 1px solid rgba(0, 0, 0, 0.3);*/
     position: relative;    
     max-width: 350px;
+    background-color: red;
     /*max-height: 200px;*/
 }
 
@@ -50,7 +51,7 @@ textarea {
     width: auto;
     /*display: block;*/
     margin-bottom: 0.5em;
-    padding-top: 1.5em;
+    /*padding-top: 1.5em;*/
 
 }
 
@@ -60,14 +61,37 @@ textarea {
 }
 
 .radioImage span {
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    position: absolute;
+    /*border: 1px solid rgba(0, 0, 0, 0.3);*/
     font-size: large;
     /*margin-top: 1em;*/
 }
 
+.otherAmount {
+    margin-top: 5em;
+    /*background-color: blue;*/
+    /*display: block;*/
+}
+
+/*.otherAmount span {
+    margin-left: 2em;
+}*/
+
+.withPound {
+    /*padding-left: 10em;*/
+}
+
+.withPound input {
+    padding-left: 1em;
+}
+
+.poundSign {
+    position: relative;
+    margin-right: -1em;
+    z-index: 1;
+}
+
 h3 {
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    /*border: 1px solid rgba(0, 0, 0, 0.3);*/
     display: compact;
     width: 200px;
     /*background-color: red;
