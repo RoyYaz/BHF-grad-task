@@ -182,6 +182,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Donation.cs" />
+    <Compile Include="Models\DonationUserModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\User.cs" />
@@ -250,6 +251,7 @@
     <Content Include="Views\Donate\Details.cshtml" />
     <Content Include="Views\Donate\Edit.cshtml" />
     <Content Include="Views\Donate\Index.cshtml" />
+    <Content Include="Views\Donate\DonateForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
