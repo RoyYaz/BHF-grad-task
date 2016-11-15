@@ -1,4 +1,5 @@
-﻿@model BHF_grad_task.Models.Donation
+﻿@model BHF_grad_task.Models.DonationUserModel
+
 
 @{
     ViewBag.Title = "DonateForm";
@@ -40,16 +41,93 @@
             </span>
         </label>
         <div>
-            @Html.LabelFor(model => model.Money)
+            @Html.LabelFor(model => model.donation.Money)
             <div class="withPound">
                 <span class="poundSign">&pound;</span>
-                @Html.TextBoxFor(model => model.Money)
+                @Html.TextBoxFor(model => model.donation.Money)
             </div>
         </div>
         @*<label class="otherAmount">
-            Other amount <span class="poundSign">£</span>  <span>@Html.TextBoxFor(model => model.Money)</span>
-        </label>*@
+                Other amount <span class="poundSign">£</span>  <span>@Html.TextBoxFor(model => model.Money)</span>
+            </label>*@
     </div>
+
+    @{
+        List<SelectListItem> listTitles = new List<SelectListItem>();
+        listTitles.Add(new SelectListItem
+        {
+            Text = "Ms",
+            Value = "Ms"
+        });
+        listTitles.Add(new SelectListItem
+        {
+            Text = "Mr",
+            Value = "Mr",
+            //Selected = true
+        });
+        listTitles.Add(new SelectListItem
+        {
+            Text = "Mrs",
+            Value = "Mrs"
+        });
+        listTitles.Add(new SelectListItem
+        {
+            Text = "Miss",
+            Value = "Miss"
+        });
+        listTitles.Add(new SelectListItem
+        {
+            Text = "Dr",
+            Value = "Dr"
+        });
+        listTitles.Add(new SelectListItem
+        {
+            Text = "Professor",
+            Value = "Professor"
+        });
+        listTitles.Add(new SelectListItem
+        {
+            Text = "Other",
+            Value = "Other"
+        });
+    }
+
+    <div id="name">
+        <h3>Name</h3>
+
+        @using (Html.BeginForm("Name", "Donate", FormMethod.Post))
+        {
+
+            <fieldset>
+                <div class="title">
+                    @Html.LabelFor(model => model.user.Title)
+                    @Html.DropDownListFor(model => model.user.Title, listTitles, "Select")
+                </div>
+                <div class="forename">
+                    @Html.LabelFor(model => model.user.Forename)
+                    @Html.TextBoxFor(model => model.user.Forename)
+                </div>
+                <div class="surname">
+                    @Html.LabelFor(model => model.user.Surname)
+                    @Html.TextBoxFor(model => model.user.Surname)
+                </div>
+
+                <p>
+
+                    <input type="submit" value="Submit" />
+
+                </p>
+
+            </fieldset>
+
+            <fieldset>
+
+            </fieldset>
+
+        }
+    </div>
+
+
 
     @*<div id="wrapper2">
         <h3>One-off donation</h3>
@@ -79,13 +157,13 @@
         <table class="table">
             <tr>
                 <th>
-                    @Html.DisplayNameFor(model => model.Money)
+                    @Html.DisplayNameFor(model => model.donation.Money)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.DonationDate)
+                    @Html.DisplayNameFor(model => model.donation.DonationDate)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.Regularity)
+                    @Html.DisplayNameFor(model => model.donation.Regularity)
                 </th>
                 <th></th>
             </tr>

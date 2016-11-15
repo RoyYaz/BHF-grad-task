@@ -14,10 +14,12 @@ namespace BHF_grad_task.Models
 
         [Required]
         [StringLength(35)]
+        [Display(Name = "First Name")]
         public string Forename { get; set; }
 
         [Required]
         [StringLength(35)]
+        [Display(Name = "Last Name")]
         public string Surname { get; set; }
 
         [EmailAddress]
