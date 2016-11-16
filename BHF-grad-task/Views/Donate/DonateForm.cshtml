@@ -25,28 +25,30 @@
             @*~/Views/Donate/*@
             <img src="https://tanyagrove.files.wordpress.com/2011/05/test-tubes.jpg" alt="Test tubes" />
             <span>
-                @Html.RadioButton("regularDonation", 10.00M) £10 could pay for a toolkit for heart attack researchers use in a day
+                @Html.RadioButton("regularDonation", 10.00M, false, new { @class = "radioButton" }) £10 could pay for a toolkit for heart attack researchers use in a day
             </span>
         </label>
         <label class="radioImage">
             <img src="http://www.alzheimersresearchuk.org/wp-content/uploads/2015/02/researcher-leader-image3.jpg" alt="Researcher">
             <span>
-                @Html.RadioButton("regularDonation", 25.00M) £25 could pay for one hour of research by our early career scientists
+                @Html.RadioButton("regularDonation", 25.00M, false, new { @class = "radioButton" }) £25 could pay for one hour of research by our early career scientists
             </span>
         </label>
         <label class="radioImage">
             <img src="http://www.research-in-germany.org/mediaObject/en/Jobs-and-Career/female-researcher-inspecting-tube/original/female+researcher+inspecting+tube.jpg" alt="phd researcher" />
             <span>
-                @Html.RadioButton("regularDonation", 50.00M) £50 could support a PhD student starting their career in research
+                @Html.RadioButton("regularDonation", 50.00M, false, new { @class = "radioButton" }) £50 could support a PhD student starting their career in research
             </span>
         </label>
-        <div>
+        @*<div>
             @Html.LabelFor(model => model.donation.Money)
             <div class="withPound">
                 <span class="poundSign">&pound;</span>
                 @Html.TextBoxFor(model => model.donation.Money)
+                @Html.ValidationMessageFor(model => model.donation.Money)
             </div>
-        </div>
+        </div>*@
+
         @*<label class="otherAmount">
                 Other amount <span class="poundSign">£</span>  <span>@Html.TextBoxFor(model => model.Money)</span>
             </label>*@
@@ -92,12 +94,12 @@
         });
     }
 
-    <div id="name">
-        <h3>Name</h3>
-
-        @using (Html.BeginForm("Name", "Donate", FormMethod.Post))
+    <div id="user">
+        <h3>Your Details</h3>
+        
+        @using (Html.BeginForm("DonateForm", "Donate", FormMethod.Post))
         {
-
+            @Html.AntiForgeryToken()
             <fieldset>
                 <div class="title">
                     @Html.LabelFor(model => model.user.Title)
@@ -106,12 +108,47 @@
                 <div class="forename">
                     @Html.LabelFor(model => model.user.Forename)
                     @Html.TextBoxFor(model => model.user.Forename)
+                    @Html.ValidationMessageFor(model => model.user.Forename)
                 </div>
                 <div class="surname">
                     @Html.LabelFor(model => model.user.Surname)
                     @Html.TextBoxFor(model => model.user.Surname)
+                    @Html.ValidationMessageFor(model => model.user.Surname)
                 </div>
-
+                <div class="email">
+                    @Html.LabelFor(model => model.user.Email)
+                    @Html.TextBoxFor(model => model.user.Email)
+                    @Html.ValidationMessageFor(model => model.user.Email)
+                </div>
+                <div class="noAddress">
+                    @Html.LabelFor(model => model.user.NoAddress)
+                    @Html.TextBoxFor(model => model.user.NoAddress)
+                    @Html.ValidationMessageFor(model => model.user.NoAddress)
+                </div>
+                <div class="address">
+                    @Html.LabelFor(model => model.user.Address)
+                    @Html.TextBoxFor(model => model.user.Address)
+                    @Html.ValidationMessageFor(model => model.user.Address)
+                </div>
+                <div class="postCode">
+                    @Html.LabelFor(model => model.user.PostCode)
+                    @Html.TextBoxFor(model => model.user.PostCode)
+                    @Html.ValidationMessageFor(model => model.user.PostCode)
+                </div>
+                <div class="telephone">
+                    @Html.LabelFor(model => model.user.Telephone)
+                    @Html.TextBoxFor(model => model.user.Telephone)
+                    @Html.ValidationMessageFor(model => model.user.Telephone)
+                </div>
+                <div>
+                    @Html.LabelFor(model => model.donation.Money)
+                    <div class="withPound">
+                        <span class="poundSign">&pound;</span>
+                        @Html.TextBoxFor(model => model.donation.Money)
+                        @Html.ValidationMessageFor(model => model.donation.Money)
+                    </div>
+                </div>
+                
                 <p>
 
                     <input type="submit" value="Submit" />
@@ -119,11 +156,6 @@
                 </p>
 
             </fieldset>
-
-            <fieldset>
-
-            </fieldset>
-
         }
     </div>
 
@@ -191,4 +223,8 @@
         </table>
     </div>
 </body>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/donate")
+}
 
