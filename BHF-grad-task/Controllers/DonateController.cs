@@ -27,28 +27,6 @@ namespace BHF_grad_task.Controllers
             return View();
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult DonateForm([Bind(Include = "Money, Title, Forename, Surname, Email, NoAddress, Address, Postcode, Telephone")]DonationUserModel duModel)
-        {
-            try
-            {
-                if (ModelState.IsValid)
-                {
-                    db.donateDB.Add(duModel.donation);
-                    db.userDB.Add(duModel.user);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
-                }
-            }
-            catch (DataException /* dex */)
-            {
-                //Log the error (uncomment dex variable name and add a line here to write a log.
-                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
-            }
-            return RedirectToAction("Index");
-        }
-
         // GET: Donate/Details/5
         public ActionResult Details(int? id)
         {
