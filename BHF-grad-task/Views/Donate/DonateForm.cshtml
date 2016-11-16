@@ -140,6 +140,11 @@
                     @Html.TextBoxFor(model => model.user.Telephone)
                     @Html.ValidationMessageFor(model => model.user.Telephone)
                 </div>
+                <div class="regularity">
+                    @Html.LabelFor(model => model.donation.Regularity)
+                    @Html.TextBoxFor(model => model.donation.Regularity)
+                    @Html.ValidationMessageFor(model => model.donation.Regularity)
+                </div>
                 <div>
                     @Html.LabelFor(model => model.donation.Money)
                     <div class="withPound">

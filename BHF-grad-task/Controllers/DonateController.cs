@@ -29,22 +29,23 @@ namespace BHF_grad_task.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DonateForm([Bind(Include = "Money, Title, Forename, Surname, Email, NoAddress, Address, Postcode, Telephone")]DonationUserModel duModel)
+        public ActionResult DonateForm([Bind(Include = "Title, Forename, Surname, Email, NoAddress, Address, Postcode, Telephone")]User user, [Bind(Include = "Money, Regularity")] Donation donation)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    db.donateDB.Add(duModel.donation);
-                    db.userDB.Add(duModel.user);
+                    donation.DonationDate = DateTime.Now;
+                    db.donateDB.Add(donation);
+                    db.userDB.Add(user);
                     db.SaveChanges();
                     return RedirectToAction("Index");
                 }
             }
-            catch (DataException /* dex */)
+            catch (DataException dex)
             {
                 //Log the error (uncomment dex variable name and add a line here to write a log.
-                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                ModelState.AddModelError("", dex + " Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
             return RedirectToAction("Index");
         }
