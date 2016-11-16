@@ -30,10 +30,6 @@ textarea {
     max-width: 280px;
 }
 
-#wrapper, #wrapper2 {
-    /*border: 1px solid rgba(0, 0, 0, 0.3);*/
-}
-
 .radioImage {
     /*border: 1px solid rgba(0, 0, 0, 0.3);*/
     position: relative;
@@ -106,17 +102,38 @@ textarea {
     margin-left: 15px;
 }
 
-.title, .forename, .surname {
+.email input {
+    margin-left: 50px;
+}
+
+.noAddress input {
+    margin-left: 10px;
+}
+
+.address input {
+    margin-left: 30px;
+}
+
+.postCode input {
+    margin-left: 20px;
+}
+
+.telephone input {
+    margin-left: 18px;
+}
+
+.title, .forename, .surname, .email, .noAddress, .address, .postCode, .telephone {
     /*max-width: 70px;*/
     font-size: 15px;
 }
 
-#name {
+#user, #wrapper {
     background-color: #f0f0ef;
     background: -webkit-gradient(linear, left top, left bottom, from(#f0f0ef), to(#000000));
     background: -webkit-linear-gradient(top, #f0f0ef 100%, #000000);
     background: -moz-linear-gradient(top, #f0f0ef, #000000);
     background: -o-linear-gradient(top, #f0f0ef, #000000);
+    max-width: 75.6em;
     /*background-color: #1d1e21; Old browsers 
 background-image: -moz-linear-gradient(top, #1d1e21 100%, #000000 100%);  FF3.6-15 
 background-image: -webkit-linear-gradient(top, #1d1e21 100%,#000000 100%);  Chrome10-25,Safari5.1-6 
@@ -124,7 +141,7 @@ background-image: linear-gradient(to bottom, #1d1e21 100%,#000000 100%);  W3C, I
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d1e21', endColorstr='#000000',GradientType=0 ); IE6-9 */
 }
 
-    #name p {
+    #user p {
         max-width: 4.5em;
         margin-top: 1em;
     }
