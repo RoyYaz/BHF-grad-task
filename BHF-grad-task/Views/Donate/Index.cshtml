@@ -3,77 +3,27 @@
 @{
     ViewBag.Title = "Index";
 }
-<head>
-    <title>@ViewBag.Title - Donate to BHF</title>
-</head>
 
-<body>
-    <h2>Index</h2>
+<h2>Index</h2>
 
-    <p>
-        @Html.ActionLink("Create New", "Create")
-    </p>
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Donate", "DonateForm")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+    </tr>
 
-    <div id="wrapper">
-        <label class="radioImage">
-            @*~/Views/Donate/*@
-            <img src="https://i.ytimg.com/vi/PvI9MPtuT3w/maxresdefault.jpg" alt="Test tubes" />
-            <span>
-                @Html.RadioButton("radioOneOff", 10.00M) £10
-            </span>
-        </label>
-        <label class="radioImage">
-            <img src="http://www.myocarditisfoundation.org/wp-content/uploads/researcher.jpg" alt="Researcher" />
-            <span>
-                @Html.RadioButton("radioOneOff", 25.00M)
-                £25
-            </span>
-        </label>
-        <label class="radioImage">
-            @*http://localhost/~/Donate/researcher-toolkit_316x205.jpg*@
-            <img src="http://www.research-in-germany.org/mediaObject/en/Jobs-and-Career/female-researcher-inspecting-tube/original/female+researcher+inspecting+tube.jpg" alt= "PHD researcher" />
-            <span>
-                @Html.RadioButton("radioOneOff", 50.00M)
-                £50
-            </span>
-        </label>
-    </div>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.DonationID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.DonationID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.DonationID })
+            </td>
+        </tr>
+    }
 
-    <div>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.Money)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.DonationDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Regularity)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Money)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DonationDate)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Regularity)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.DonationID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.DonationID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.DonationID })
-                    </td>
-                </tr>
-            }
-
-        </table>
-    </div>
-</body>
+</table>

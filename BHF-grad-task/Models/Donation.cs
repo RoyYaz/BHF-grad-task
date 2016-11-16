@@ -14,6 +14,7 @@ namespace BHF_grad_task.Models
         
         [Range(1, 5000)]
         [DataType(DataType.Currency)]
+        [Display(Name = "Other amount")]
         public decimal Money { get; set; }
 
         [Display(Name = "Donation Date")]
