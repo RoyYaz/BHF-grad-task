@@ -23,11 +23,11 @@ namespace BHF_grad_task.Migrations
                 c => new
                     {
                         UserID = c.Int(nullable: false, identity: true),
-                        Title = c.String(),
+                        Title = c.String(nullable: false),
                         Forename = c.String(nullable: false, maxLength: 35),
                         Surname = c.String(nullable: false, maxLength: 35),
                         Email = c.String(nullable: false, maxLength: 255),
-                        NoAddress = c.String(nullable: false, maxLength: 35),
+                        NoAddress = c.String(nullable: false, maxLength: 7),
                         Address = c.String(nullable: false, maxLength: 35),
                         PostCode = c.String(nullable: false, maxLength: 8),
                         Telephone = c.String(),

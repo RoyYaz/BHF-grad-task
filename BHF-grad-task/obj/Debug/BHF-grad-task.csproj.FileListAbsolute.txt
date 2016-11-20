@@ -136,7 +136,7 @@ C:\Users\JuicyMcFruity\Source\Repos\BHF-grad-task\BHF-grad-task\bin\Microsoft.Ow
 C:\Users\JuicyMcFruity\Source\Repos\BHF-grad-task\BHF-grad-task\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\JuicyMcFruity\Source\Repos\BHF-grad-task\BHF-grad-task\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\JuicyMcFruity\Source\Repos\BHF-grad-task\BHF-grad-task\obj\Debug\BHF-grad-task.csprojResolveAssemblyReference.cache
-C:\Users\JuicyMcFruity\Source\Repos\BHF-grad-task\BHF-grad-task\obj\Debug\BHF_grad_task.Migrations.Initial.resources
-C:\Users\JuicyMcFruity\Source\Repos\BHF-grad-task\BHF-grad-task\obj\Debug\BHF-grad-task.csproj.GenerateResource.Cache
 C:\Users\JuicyMcFruity\Source\Repos\BHF-grad-task\BHF-grad-task\obj\Debug\BHF-grad-task.dll
 C:\Users\JuicyMcFruity\Source\Repos\BHF-grad-task\BHF-grad-task\obj\Debug\BHF-grad-task.pdb
+C:\Users\JuicyMcFruity\Source\Repos\BHF-grad-task\BHF-grad-task\obj\Debug\BHF_grad_task.Migrations.Initial.resources
+C:\Users\JuicyMcFruity\Source\Repos\BHF-grad-task\BHF-grad-task\obj\Debug\BHF-grad-task.csproj.GenerateResource.Cache

@@ -125,45 +125,47 @@
         @using (Html.BeginForm("DonateForm", "Donate", FormMethod.Post))
         {
             @Html.AntiForgeryToken()
-            <fieldset>
+            //<fieldset>
+            //@Html.ValidationSummary(true, "", new { @class = "text-danger" })
                 <div class="title">
                     @Html.LabelFor(model => model.user.Title)
                     @Html.DropDownListFor(model => model.user.Title, listTitles, "Select")
+                    @Html.ValidationMessageFor(model => model.user.Title, "", new { @class = "text-danger" })
                 </div>
                 <div class="forename">
                     @Html.LabelFor(model => model.user.Forename)
                     @Html.TextBoxFor(model => model.user.Forename)
-                    @Html.ValidationMessageFor(model => model.user.Forename)
+                    @Html.ValidationMessageFor(model => model.user.Forename, "", new { @class = "text-danger" })
                 </div>
                 <div class="surname">
                     @Html.LabelFor(model => model.user.Surname)
                     @Html.TextBoxFor(model => model.user.Surname)
-                    @Html.ValidationMessageFor(model => model.user.Surname)
+                    @Html.ValidationMessageFor(model => model.user.Surname, "", new { @class = "text-danger" })
                 </div>
                 <div class="email">
                     @Html.LabelFor(model => model.user.Email)
                     @Html.TextBoxFor(model => model.user.Email)
-                    @Html.ValidationMessageFor(model => model.user.Email)
+                    @Html.ValidationMessageFor(model => model.user.Email, "", new { @class = "text-danger" })
                 </div>
                 <div class="noAddress">
                     @Html.LabelFor(model => model.user.NoAddress)
                     @Html.TextBoxFor(model => model.user.NoAddress)
-                    @Html.ValidationMessageFor(model => model.user.NoAddress)
+                    @Html.ValidationMessageFor(model => model.user.NoAddress, "", new { @class = "text-danger" })
                 </div>
                 <div class="address">
                     @Html.LabelFor(model => model.user.Address)
                     @Html.TextBoxFor(model => model.user.Address)
-                    @Html.ValidationMessageFor(model => model.user.Address)
+                    @Html.ValidationMessageFor(model => model.user.Address, "", new { @class = "text-danger" })
                 </div>
                 <div class="postCode">
                     @Html.LabelFor(model => model.user.PostCode)
                     @Html.TextBoxFor(model => model.user.PostCode)
-                    @Html.ValidationMessageFor(model => model.user.PostCode)
+                    @Html.ValidationMessageFor(model => model.user.PostCode, "", new { @class = "text-danger" })
                 </div>
                 <div class="telephone">
                     @Html.LabelFor(model => model.user.Telephone)
                     @Html.TextBoxFor(model => model.user.Telephone)
-                    @Html.ValidationMessageFor(model => model.user.Telephone)
+                    @Html.ValidationMessageFor(model => model.user.Telephone, "", new { @class = "text-danger" })
                 </div>
                 <div class="regularity">
                     @Html.LabelFor(model => model.donation.Regularity)
@@ -175,17 +177,17 @@
                     <div class="withPound">
                         <span class="poundSign">&pound;</span>
                         @Html.TextBoxFor(model => model.donation.Money)
-                        @Html.ValidationMessageFor(model => model.donation.Money)
+                        @Html.ValidationMessageFor(model => model.donation.Money, "", new { @class = "text-danger" })
                     </div>
                 </div>
                 
                 <p>
 
-                    <input type="submit" value="Submit" />
+                    <input type="submit" value="Donate" />
 
                 </p>
 
-            </fieldset>
+            //</fieldset>
         }
     </div>
 
@@ -215,46 +217,13 @@
             </label>
         </div>*@
 
-    <div>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.donation.Money)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.donation.DonationDate)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.donation.Regularity)
-                </th>
-                <th></th>
-            </tr>
 
-            @*@foreach (var item in Model)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Money)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.DonationDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Regularity)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.DonationID }) |
-                            @Html.ActionLink("Details", "Details", new { id = item.DonationID }) |
-                            @Html.ActionLink("Delete", "Delete", new { id = item.DonationID })
-                        </td>
-                    </tr>
-                }*@
-
-        </table>
-    </div>
 </body>
 
 @section Scripts {
     @Scripts.Render("~/bundles/donate")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
 }
+
 

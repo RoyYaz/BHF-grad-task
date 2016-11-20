@@ -91,19 +91,23 @@ textarea {
 }*/
 
 .title select {
-    margin-left: 4em;
+    margin-left: 100px;
+}
+
+.regularity select {
+    margin-left: 57px;
 }
 
 .forename input {
-    margin-left: 13px;
+    margin-left: 53px;
 }
 
 .surname input {
-    margin-left: 15px;
+    margin-left: 55px;
 }
 
 .email input {
-    margin-left: 50px;
+    margin-left: 90px;
 }
 
 .noAddress input {
@@ -111,19 +115,15 @@ textarea {
 }
 
 .address input {
-    margin-left: 30px;
+    margin-left: 70px;
 }
 
 .postCode input {
-    margin-left: 20px;
+    margin-left: 60px;
 }
 
 .telephone input {
-    margin-left: 18px;
-}
-
-.regularity select {
-    margin-left: 17px;
+    margin-left: 58px;
 }
 
 .title, .forename, .surname, .email, .noAddress, .address, .postCode, .telephone, .regularity {
