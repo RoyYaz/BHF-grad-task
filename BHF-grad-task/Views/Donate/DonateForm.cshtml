@@ -64,7 +64,7 @@
         listTitles.Add(new SelectListItem
         {
             Text = "Mr",
-            Value = "Mr",
+            Value = "Mr"
             //Selected = true
         });
         listTitles.Add(new SelectListItem
@@ -94,7 +94,32 @@
         });
     }
 
-    <div id="user">
+    @{
+        List<SelectListItem> listRegularity = new List<SelectListItem>();
+        listRegularity.Add(new SelectListItem
+        {
+            Text = "One-off",
+            Value = "One-off",
+            Selected = true
+        });
+        listRegularity.Add(new SelectListItem
+        {
+            Text = "Monthly",
+            Value = "Monthly"
+        });
+        listRegularity.Add(new SelectListItem
+        {
+            Text = "Quarterly",
+            Value = "Quarterly"
+        });
+        listRegularity.Add(new SelectListItem
+        {
+            Text = "Annually",
+            Value = "Annually"
+        });
+    }
+
+  <div id="user">
         <h3>Your Details</h3>
         
         @using (Html.BeginForm("DonateForm", "Donate", FormMethod.Post))
@@ -142,7 +167,7 @@
                 </div>
                 <div class="regularity">
                     @Html.LabelFor(model => model.donation.Regularity)
-                    @Html.TextBoxFor(model => model.donation.Regularity)
+                    @Html.DropDownListFor(model => model.donation.Regularity, listRegularity)
                     @Html.ValidationMessageFor(model => model.donation.Regularity)
                 </div>
                 <div>

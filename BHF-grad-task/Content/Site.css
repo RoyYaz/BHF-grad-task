@@ -122,7 +122,11 @@ textarea {
     margin-left: 18px;
 }
 
-.title, .forename, .surname, .email, .noAddress, .address, .postCode, .telephone {
+.regularity select {
+    margin-left: 17px;
+}
+
+.title, .forename, .surname, .email, .noAddress, .address, .postCode, .telephone, .regularity {
     /*max-width: 70px;*/
     font-size: 15px;
 }
