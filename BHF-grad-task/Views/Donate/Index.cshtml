@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BHF_grad_task.Models.Donation>
+﻿@model IEnumerable<BHF_grad_task.Models.DonationUserModel>
 
 @{
     ViewBag.Title = "Index";
@@ -13,16 +13,43 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.DonationID)
+            @Html.DisplayNameFor(model => model.donation.DonationID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DonationDate)
+            @Html.DisplayNameFor(model => model.donation.DonationDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Money)
+            @Html.DisplayNameFor(model => model.donation.Money)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Regularity)
+            @Html.DisplayNameFor(model => model.donation.Regularity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.Forename)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.Surname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.NoAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.PostCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.user.Telephone)
         </th>
         <th></th>
     </tr>
@@ -31,22 +58,49 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.DonationID)
+                @Html.DisplayFor(modelItem => item.donation.DonationID)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DonationDate)
+                @Html.DisplayFor(modelItem => item.donation.DonationDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Money)
+                @Html.DisplayFor(modelItem => item.donation.Money)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Regularity)
+                @Html.DisplayFor(modelItem => item.donation.Regularity)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.DonationID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.DonationID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.DonationID })
+                @Html.DisplayFor(modelItem => item.user.UserID)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.Forename)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.Surname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.NoAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.PostCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.user.Telephone)
+            </td>
+            @*<td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.donation.DonationID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.donation.DonationID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.donation.DonationID })
+            </td>*@
         </tr>
     }
 

@@ -18,7 +18,29 @@ namespace BHF_grad_task.Controllers
         // GET: Donate
         public ActionResult Index()
         {
-            return View(db.donateDB.ToList());
+            //var query1 = db.donateDB
+            //    .Join(db.userDB, 
+            //    a => a.userID, b => b.userID, (b, a) => new { Donation = b, User = a });
+
+            //ICollection<DonationUserModel> DUMList;
+
+            var query = from d in db.donateDB
+                        join u in db.userDB
+                        on d.UserID equals u.UserID
+                        select new DonationUserModel()
+                        {
+                            donation = d, user = u
+                        };
+
+            //foreach(var item in query)
+            //{
+            //    if (item is Donation)
+            //    {
+
+            //    }
+            //}
+
+            return View(query.ToList());
         }
 
         // GET: Donate/DonateForm
@@ -35,11 +57,33 @@ namespace BHF_grad_task.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    donation.DonationDate = DateTime.Now;
-                    db.donateDB.Add(donation);
-                    db.userDB.Add(user);
-                    db.SaveChanges();
-                    return RedirectToAction("Index");
+                    User email = db.userDB.FirstOrDefault(u => u.Email.ToLower() == user.Email.ToLower());
+                    if (email == null)
+                    {
+                        donation.UserID = user.UserID;
+                        donation.DonationDate = DateTime.Now;
+
+                        db.userDB.Add(user);
+                        db.donateDB.Add(donation);
+                        db.SaveChanges();
+
+                        return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        donation.UserID = email.UserID;
+                        donation.DonationDate = DateTime.Now;
+
+                        db.donateDB.Add(donation);
+                        db.SaveChanges();
+                        return RedirectToAction("Index");
+                    }
+
+                    //donation.DonationDate = DateTime.Now;
+                    //db.donateDB.Add(donation);
+                    //db.userDB.Add(user);
+                    //db.SaveChanges();
+                    //return RedirectToAction("Index");
                 }
             }
             catch (DataException dex)

@@ -15,8 +15,11 @@ namespace BHF_grad_task.Migrations
                         Money = c.Decimal(nullable: false, precision: 18, scale: 2),
                         DonationDate = c.DateTime(nullable: false),
                         Regularity = c.String(),
+                        UserID = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => t.DonationID);
+                .PrimaryKey(t => t.DonationID)
+                .ForeignKey("dbo.User", t => t.UserID, cascadeDelete: true)
+                .Index(t => t.UserID);
             
             CreateTable(
                 "dbo.User",
@@ -38,6 +41,8 @@ namespace BHF_grad_task.Migrations
         
         public override void Down()
         {
+            DropForeignKey("dbo.Donation", "UserID", "dbo.User");
+            DropIndex("dbo.Donation", new[] { "UserID" });
             DropTable("dbo.User");
             DropTable("dbo.Donation");
         }

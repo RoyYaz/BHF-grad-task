@@ -25,6 +25,12 @@ namespace BHF_grad_task.Models
         public string Regularity { get; set; }
 
         
+        public int UserID { get; set; }
+
+        public virtual User User { get; set; }
+
+
+
     }
 
     //public class DonationDBContext : DbContext

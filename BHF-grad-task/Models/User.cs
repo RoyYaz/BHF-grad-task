@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Collections.Generic;
 
 namespace BHF_grad_task.Models
 {
@@ -48,7 +49,9 @@ namespace BHF_grad_task.Models
         [DataType(DataType.PhoneNumber)]
         public string Telephone { get; set; }
 
-        
+        public virtual ICollection<Donation> Donations { get; set; }
+
+
     }
 
     //public class UserDBContext : DbContext

@@ -16,24 +16,6 @@ namespace BHF_grad_task.Migrations
 
         protected override void Seed(DataAccessLayer.BHFContext context)
         {
-            context.donateDB.AddOrUpdate(i => i.DonationID,
-                new Donation
-                {
-                    DonationID = 1,
-                    Money = 10.00M,
-                    DonationDate = DateTime.Now,
-                    Regularity = "One-off"
-                },
-
-                new Donation
-                {
-                    DonationID = 2,
-                    Money = 10.00M,
-                    DonationDate = DateTime.Now,
-                    Regularity = "One-off"
-                }
-                );
-
             context.userDB.AddOrUpdate(i => i.UserID,
                 new User
                 {
@@ -59,6 +41,24 @@ namespace BHF_grad_task.Migrations
                     Address = "Hampstead Rd",
                     PostCode = "NW1 7AW",
                     Telephone = "02079350185"
+                }
+                );
+
+            context.donateDB.AddOrUpdate(i => i.DonationID,
+                new Donation
+                {
+                    UserID =1,
+                    Money = 10.00M,
+                    DonationDate = DateTime.Now,
+                    Regularity = "One-off"
+                },
+
+                new Donation
+                {
+                    UserID = 2,
+                    Money = 10.00M,
+                    DonationDate = DateTime.Now,
+                    Regularity = "One-off"
                 }
                 );
         }
